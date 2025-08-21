@@ -1,0 +1,139 @@
+import { Button } from "@mui/material";
+import {
+  CalendarToday,
+  Campaign,
+  PieChart,
+  Description,
+  Straighten,
+  AttachMoney,
+  FilterList,
+  Folder,
+  BarChart,
+} from "@mui/icons-material";
+
+import "./CampaignSection.scss";
+
+const CampaignSection = () => {
+  return (
+    <div className="campaign-card">
+      {/* Top Row */}
+      <div className="top-row">
+        <div className="campaign-title">
+          <h3>Campaign #01</h3>
+          <div className="status-buttons">
+            <Button
+              variant="contained"
+              size="small"
+              className="active-btn"
+              sx={{ borderRadius: "12px" }}
+            >
+              Active
+            </Button>
+            <Button
+              variant="outlined"
+              size="small"
+              sx={{ borderRadius: "12px" }}
+            >
+              Ongoing
+            </Button>
+            <Button
+              variant="outlined"
+              size="small"
+              sx={{ borderRadius: "12px" }}
+            >
+              Completed
+            </Button>
+          </div>
+        </div>
+
+        <h3 className="performance-title">Performance Metrics</h3>
+      </div>
+
+      <div className="campaign-content">
+        {/* Left Column */}
+        <div className="campaign-info">
+          <div className="info-item">
+            <span className="icon">
+              <CalendarToday />
+            </span>
+            <span className="label">Active Date</span>
+            <span className="value">July - 01 - 2025</span>
+          </div>
+          <div className="info-item">
+            <span className="icon">
+              <Campaign />
+            </span>
+            <span className="label">Channels</span>
+            <span className="value">Insta + Email</span>
+          </div>
+          <div className="info-item">
+            <span className="icon">
+              <PieChart />
+            </span>
+            <span className="label">Segment Name</span>
+            <span className="value">Insta + Email</span>
+          </div>
+          <div className="info-item">
+            <span className="icon">
+              <Description />
+            </span>
+            <span className="label">Description</span>
+            <span className="value">Lorem Ipsum</span>
+          </div>
+          <div className="info-item">
+            <span className="icon">
+              <Straighten />
+            </span>
+            <span className="label">Size</span>
+            <span className="value">Lorem Ipsum</span>
+          </div>
+        </div>
+
+        {/* Right Column */}
+        <div className="campaign-metrics">
+          <div className="info-item">
+            <span className="icon">
+              <AttachMoney />
+            </span>
+            <span className="label">Spend</span>
+            <span className="value">₹3,225</span>
+          </div>
+          <div className="info-item">
+            <span className="icon">
+              <FilterList />
+            </span>
+            <span className="label">Leads</span>
+            <span className="value">11 daily avg</span>
+          </div>
+          <div className="info-item">
+            <span className="icon">
+              <Folder />
+            </span>
+            <span className="label">CNV</span>
+            <span className="value">Lorem Ipsum</span>
+          </div>
+          <div className="info-item sales-item">
+            <span className="icon">
+              <BarChart />
+            </span>
+            <span className="label">Sales</span>
+            <Button variant="outlined" size="small">
+              QTY ▼
+            </Button>
+            <span className="value">₹4,500</span>
+          </div>
+          <div className="action-buttons">
+            <Button variant="outlined" className="clone-btn">
+              Clone / Q
+            </Button>
+            <Button variant="contained" className="view-btn">
+              View Report
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default CampaignSection;

@@ -1,0 +1,27 @@
+// New Campaign Button
+.new-campaign-btn {
+  position: relative;
+  width: 218px;
+  height: 49px;
+  margin-left: auto;
+  background: #4648ff;
+  border-radius: 8px;
+  border: none;
+  color: #f2f2f0;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  box-shadow: 0 4px 12px rgba(70, 72, 255, 0.3);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: #3b3dcc;
+    box-shadow: 0 6px 16px rgba(70, 72, 255, 0.4);
+    transform: translateY(-2px);
+  }
+}

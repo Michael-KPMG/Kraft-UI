@@ -1,0 +1,105 @@
+import {
+  Search,
+  LightMode,
+  History,
+  Notifications,
+  Settings,
+} from "@mui/icons-material";
+
+import "./Header.scss";
+
+// Custom Menu Icon to match Figma design (cleaner hamburger)
+const CustomMenuIcon = ({ sx }) => (
+  <svg
+    width={sx?.fontSize || 20}
+    height={sx?.fontSize || 20}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M3 7h18v1.5H3V7zm0 4.25h18v1.5H3v-1.5zm0 4.25h18V17H3v-1.5z"
+      fill={sx?.color || "#000000"}
+    />
+  </svg>
+);
+
+// Custom Star Icon to match Figma design (sharper, cleaner star)
+const CustomStarIcon = ({ sx }) => (
+  <svg
+    width={sx?.fontSize || 20}
+    height={sx?.fontSize || 20}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M12 2.5l2.4 7.4h7.8l-6.3 4.6 2.4 7.4L12 17.3l-6.3 4.6 2.4-7.4L1.8 9.9h7.8L12 2.5z"
+      fill={sx?.color || "#000000"}
+    />
+  </svg>
+);
+
+const Header = ({ onToggleSidebar }) => {
+  return (
+    <div className="dashboard-header">
+      <div className="header-left">
+        <div className="header-icon menu-toggle" onClick={onToggleSidebar}>
+          <CustomMenuIcon sx={{ fontSize: 20, color: "#000000" }} />
+        </div>
+        <div className="header-icon">
+          <CustomStarIcon sx={{ fontSize: 20, color: "#000000" }} />
+        </div>
+        <div className="breadcrumb">
+          <span>Overview</span>
+          <span>/</span>
+          <span className="breadcrumb-active">Dashboard</span>
+        </div>
+      </div>
+
+      <div className="header-right">
+        <div className="search-box">
+          <Search
+            sx={{
+              fontSize: 18,
+              color: "rgba(0, 0, 0, 0.3)",
+              flexShrink: 0,
+            }}
+          />
+          <input
+            type="text"
+            placeholder="Search"
+            style={{
+              border: "none",
+              outline: "none",
+              background: "transparent",
+              color: "rgba(0, 0, 0, 0.4)",
+              fontFamily: "Inter",
+              fontSize: "15px",
+              flex: 1,
+              fontFeatureSettings: '"ss01" on, "cv01" on',
+              padding: "0 12px",
+              fontWeight: "400",
+            }}
+          />
+        </div>
+        <div className="header-icons">
+          <div className="header-icon">
+            <LightMode sx={{ fontSize: 20, color: "#000000" }} />
+          </div>
+          <div className="header-icon">
+            <History sx={{ fontSize: 20, color: "#000000" }} />
+          </div>
+          <div className="header-icon">
+            <Notifications sx={{ fontSize: 20, color: "#000000" }} />
+          </div>
+          <div className="header-icon">
+            <Settings sx={{ fontSize: 20, color: "#000000" }} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Header;

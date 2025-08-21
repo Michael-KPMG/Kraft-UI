@@ -1,0 +1,222 @@
+import { useState, useEffect, useRef } from "react";
+import {
+  Inventory2,
+  DateRange,
+  BarChart,
+  AttachMoney,
+  KeyboardArrowDown,
+  KeyboardArrowUp,
+  Check,
+} from "@mui/icons-material";
+
+import "./FilterSection.scss";
+
+const FilterSection = () => {
+  // Initialize to match Figma design exactly
+  const [selectedFilters, setSelectedFilters] = useState({
+    product: "",
+    timeframe: "",
+    channel: "",
+    spend: "",
+  });
+
+  const [openDropdown, setOpenDropdown] = useState(null);
+  const dropdownRefs = useRef({});
+
+  // Mock data for dropdown options
+  const filterOptions = {
+    product: [
+      { id: "product-a", label: "Product A", description: "Core product line" },
+      { id: "product-b", label: "Product B", description: "Premium offering" },
+      {
+        id: "product-c",
+        label: "Product C",
+        description: "Budget-friendly option",
+      },
+      {
+        id: "marketing-suite",
+        label: "Marketing Suite",
+        description: "Complete marketing solution",
+      },
+    ],
+    timeframe: [
+      {
+        id: "last-7-days",
+        label: "Last 7 days",
+        description: "Recent performance",
+      },
+      {
+        id: "last-30-days",
+        label: "Last 30 days",
+        description: "Monthly overview",
+      },
+      {
+        id: "last-3-months",
+        label: "Last 3 months",
+        description: "Quarterly analysis",
+      },
+      {
+        id: "last-6-months",
+        label: "Last 6 months",
+        description: "Half-year trends",
+      },
+      {
+        id: "last-year",
+        label: "Last year",
+        description: "Annual performance",
+      },
+    ],
+    channel: [
+      {
+        id: "instagram",
+        label: "Instagram",
+        description: "Visual content platform",
+      },
+      {
+        id: "facebook",
+        label: "Facebook",
+        description: "Social media marketing",
+      },
+      {
+        id: "linkedin",
+        label: "LinkedIn",
+        description: "Professional network",
+      },
+      { id: "twitter", label: "Twitter", description: "Real-time engagement" },
+      { id: "email", label: "Email", description: "Direct communication" },
+      { id: "youtube", label: "YouTube", description: "Video content" },
+    ],
+    spend: [
+      {
+        id: "under-50k",
+        label: "Under ₹50k",
+        description: "Small budget campaigns",
+      },
+      { id: "50k-1l", label: "₹50k-₹1L", description: "Medium budget range" },
+      { id: "1l-5l", label: "₹1L-₹5L", description: "High budget campaigns" },
+      { id: "above-5l", label: "Above ₹5L", description: "Premium campaigns" },
+    ],
+  };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        openDropdown &&
+        dropdownRefs.current[openDropdown] &&
+        !dropdownRefs.current[openDropdown].contains(event.target)
+      ) {
+        setOpenDropdown(null);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [openDropdown]);
+
+  const handleDropdownToggle = (filterType) => {
+    setOpenDropdown(openDropdown === filterType ? null : filterType);
+  };
+
+  const handleFilterSelect = (filterType, value) => {
+    setSelectedFilters((prev) => ({
+      ...prev,
+      [filterType]: value,
+    }));
+    setOpenDropdown(null);
+  };
+
+  const generateBreadcrumb = () => {
+    const parts = [];
+    if (selectedFilters.product) parts.push(selectedFilters.product);
+    if (selectedFilters.timeframe) parts.push(selectedFilters.timeframe);
+    if (selectedFilters.channel) parts.push(selectedFilters.channel);
+    return parts.join(" > ");
+  };
+
+  const renderDropdown = (filterType, icon, label) => {
+    const isOpen = openDropdown === filterType;
+    const options = filterOptions[filterType];
+    const selectedValue = selectedFilters[filterType];
+
+    return (
+      <div
+        className="filter-dropdown-container"
+        ref={(el) => (dropdownRefs.current[filterType] = el)}
+      >
+        <div
+          className={`filter-dropdown ${isOpen ? "open" : ""}`}
+          onClick={() => handleDropdownToggle(filterType)}
+        >
+          {icon}
+          <span className="filter-label">{selectedValue || label}</span>
+          {isOpen ? (
+            <KeyboardArrowUp sx={{ fontSize: 20, color: "#000000" }} />
+          ) : (
+            <KeyboardArrowDown sx={{ fontSize: 20, color: "#000000" }} />
+          )}
+        </div>
+
+        {isOpen && (
+          <div className="dropdown-menu">
+            {options.map((option) => (
+              <div
+                key={option.id}
+                className={`dropdown-item ${
+                  selectedValue === option.label ? "selected" : ""
+                }`}
+                onClick={() => handleFilterSelect(filterType, option.label)}
+              >
+                <div className="dropdown-item-content">
+                  <span className="dropdown-item-label">{option.label}</span>
+                  <span className="dropdown-item-description">
+                    {option.description}
+                  </span>
+                </div>
+                {selectedValue === option.label && (
+                  <Check sx={{ fontSize: 16, color: "#4648ff" }} />
+                )}
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    );
+  };
+
+  return (
+    <div className="filter-section">
+      <div className="filter-controls">
+        {renderDropdown(
+          "product",
+          <Inventory2 sx={{ fontSize: 18, color: "#000000" }} />,
+          "Product"
+        )}
+        {renderDropdown(
+          "timeframe",
+          <DateRange sx={{ fontSize: 18, color: "#000000" }} />,
+          "Timeframe"
+        )}
+        {renderDropdown(
+          "channel",
+          <BarChart sx={{ fontSize: 18, color: "#000000" }} />,
+          "Channel"
+        )}
+        {renderDropdown(
+          "spend",
+          <AttachMoney sx={{ fontSize: 18, color: "#000000" }} />,
+          "Spend"
+        )}
+      </div>
+
+      {/* Breadcrumb Path - matches Figma design */}
+      <div className="breadcrumb-path">
+        {`Product > Timeframe > Channel > Instagram`}
+      </div>
+    </div>
+  );
+};
+
+export default FilterSection;

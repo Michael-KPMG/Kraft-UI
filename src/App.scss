@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+// SCSS Variables
+$sidebar-width: 217px;
+$header-height: 68px;
+$footer-height: 68px;
+$primary-color: #4648ff;
+$primary-dark: #3b3dcc;
+$background-color: #f9f9fa;
+$white: #ffffff;
+$border-color: rgba(0, 0, 0, 0.1);
+$text-primary: #000000;
+$text-secondary: #666666;
+$text-muted: rgba(0, 0, 0, 0.4);
+$font-primary: "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
+
+// Base styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-primary;
+  background-color: $background-color;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+#root {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: $background-color;
+}
+
+// Dashboard Container
+.dashboard-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+
+// Main Content
+.main-content {
+  position: fixed;
+  width: calc(100vw - #{$sidebar-width});
+  height: calc(100vh - 136px);
+  left: $sidebar-width;
+  top: $header-height;
+  bottom: $footer-height;
+  padding: 20px;
+  background: $background-color;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+
+// Responsive Design
+@media (min-width: 1441px) {
+  .main-content {
+    width: calc(100vw - #{$sidebar-width});
+  }
+}
+
+@media (max-width: 1440px) {
+  .main-content {
+    width: calc(100vw - #{$sidebar-width});
+  }
+}
+
+@media (max-width: 480px) {
+  $mobile-sidebar-width: 200px;
+  
+  .main-content {
+    width: calc(100vw - #{$mobile-sidebar-width});
+    left: $mobile-sidebar-width;
+  }
+}
+
+@media (max-width: 320px) {
+  $tiny-sidebar-width: 180px;
+  
+  .main-content {
+    width: calc(100vw - #{$tiny-sidebar-width});
+    left: $tiny-sidebar-width;
+  }
+}

@@ -1,0 +1,72 @@
+import {
+  PieChart,
+  ShoppingBag,
+  FolderOpen,
+  ArrowForwardIos,
+  KeyboardArrowDown,
+} from "@mui/icons-material";
+
+import kpmgLogo from "@/assets/kpmg-logo.jpg";
+
+import "./SideNav.scss";
+
+const SideNav = ({ isCollapsed }) => {
+  const navItems = [
+    { name: "Overview", icon: PieChart, active: true },
+    { name: "Campaigns", icon: ShoppingBag, active: false },
+    { name: "Customers", icon: FolderOpen, active: false },
+    { name: "Reports", icon: FolderOpen, active: false },
+  ];
+
+  return (
+    <div className={`sidebar ${isCollapsed ? "collapsed" : ""}`}>
+      {/* Top Section - Logo and Navigation */}
+      <div className="sidebar-top">
+        {/* Logo Section */}
+        <div className="logo-section">
+          <img src={kpmgLogo} alt="KPMG Logo" className="logo-image" />
+        </div>
+
+        {/* Navigation Menu */}
+        <div className="nav-menu">
+          {navItems.map((item, index) => {
+            const IconComponent = item.icon;
+            return (
+              <div
+                key={index}
+                className={`nav-item ${item.active ? "active" : ""}`}
+                title={isCollapsed ? item.name : ""}
+              >
+                <div className="nav-icon">
+                  <IconComponent sx={{ fontSize: 20, color: "#000000" }} />
+                </div>
+                <div className="nav-text">{item.name}</div>
+                {!item.active && (
+                  <div className="nav-arrow">
+                    <ArrowForwardIos
+                      sx={{ fontSize: 16, color: "rgba(0, 0, 0, 0.2)" }}
+                    />
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Bottom Section - User Profile */}
+      <div className="user-profile">
+        <div className="user-avatar">A</div>
+        <div className="user-info">
+          <div className="user-name">Arun</div>
+          <div className="user-role">Admin</div>
+        </div>
+        <div className="profile-dropdown">
+          <KeyboardArrowDown sx={{ fontSize: 16, color: "#151d48" }} />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default SideNav;
