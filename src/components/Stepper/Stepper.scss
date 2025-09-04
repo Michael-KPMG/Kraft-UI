@@ -1,0 +1,65 @@
+$green: #22c55e;
+$muted: rgba(0, 0, 0, 0.45);
+$text: #151d48;
+
+.stepper {
+  position: relative;
+  padding-top: 28px; // space for labels
+  margin-bottom: 8px;
+
+  .track {
+    position: relative;
+    height: 4px;
+    background: #e9eaf0;
+    border-radius: 999px;
+    overflow: hidden;
+
+    .fill {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      background: $green;
+      border-radius: 999px;
+    }
+  }
+
+  .step {
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    text-align: center;
+
+    .dot {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: -14px; // sits on the track
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+      &.done {
+        border-color: #b7ebc6;
+      }
+      &.pending {
+        border-color: rgba(0, 0, 0, 0.15);
+      }
+    }
+
+    .label {
+      position: absolute;
+      top: -28px;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      font-family: "Poppins";
+      font-size: 13px;
+      color: $text;
+      font-weight: 500;
+    }
+  }
+}

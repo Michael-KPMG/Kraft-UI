@@ -1,0 +1,105 @@
+$primary: #4648ff;
+$primary-dark: #3b3dcc;
+$bg: #f9f9fa;
+$card-bg: #ffffff;
+$border: rgba(0, 0, 0, 0.12);
+$text: #151d48;
+$muted: rgba(0, 0, 0, 0.45);
+$shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+
+.creative-studio {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.top-line .page-title {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  color: $muted;
+}
+
+.toolbar {
+  background: $card-bg;
+  border: 1px solid $border;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: $shadow;
+
+  .toolbar-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+
+    .pill {
+      height: 40px;
+      padding: 0 14px;
+      border-radius: 12px;
+      border: 1px solid $border;
+      background: #fff;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #151d48;
+      font-family: "Poppins";
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      .icon {
+        font-size: 16px;
+      }
+      &:hover {
+        border-color: rgba(0, 0, 0, 0.2);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      }
+    }
+  }
+
+  .toolbar-breadcrumb {
+    margin-top: 10px;
+    color: $muted;
+    font-size: 13px;
+    font-weight: 400;
+  }
+}
+
+.cta-row {
+  margin-top: 4px;
+  .primary-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    height: 40px;
+    padding: 0 16px;
+    border: none;
+    border-radius: 8px;
+    background: $primary;
+    color: #fff;
+    font-family: "Poppins";
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(70, 72, 255, 0.25);
+    transition: transform 0.15s ease, background 0.2s ease;
+    &:hover {
+      background: $primary-dark;
+      transform: translateY(-1px);
+    }
+  }
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+  .left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #151d48;
+    font-family: "Poppins";
+    font-weight: 500;
+    font-size: 16px;
+  }
+}

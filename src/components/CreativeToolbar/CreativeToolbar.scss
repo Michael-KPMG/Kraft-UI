@@ -1,0 +1,101 @@
+// Closely mirrors your FilterSection look and spacing
+$card-bg: #ffffff;
+$border: rgba(0, 0, 0, 0.12);
+$text: #151d48;
+$muted: rgba(0, 0, 0, 0.45);
+$shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+$primary: #4648ff;
+
+.creative-toolbar {
+  background: $card-bg;
+  border: 1px solid $border;
+  border-radius: 12px;
+  box-shadow: $shadow;
+  padding: 14px 16px;
+}
+
+.ct-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.ct-pill-wrap {
+  position: relative;
+}
+
+.ct-pill {
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1px solid $border;
+  background: #fff;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: $text;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  &.open {
+    border-color: rgba(70, 72, 255, 0.35);
+    box-shadow: 0 0 0 3px rgba(70, 72, 255, 0.12);
+  }
+}
+
+.ct-icon {
+  display: inline-flex;
+}
+
+.ct-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 220px;
+  background: #fff;
+  border: 1px solid $border;
+  border-radius: 12px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  padding: 6px;
+  z-index: 10;
+}
+
+.ct-menu-item {
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-family: "Poppins";
+  font-size: 14px;
+  color: $text;
+  cursor: pointer;
+  transition: background 0.15s ease;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.04);
+  }
+  &.active {
+    background: rgba(70, 72, 255, 0.08);
+    color: $text;
+  }
+}
+
+.ct-breadcrumb {
+  margin-top: 10px;
+  color: $muted;
+  font-size: 13px;
+  font-weight: 400;
+
+  .link {
+    color: #3b82f6;
+  } // the bluish link tone from screenshot
+  .sep {
+    margin: 0 8px;
+    color: $muted;
+  }
+}

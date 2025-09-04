@@ -1,52 +1,52 @@
+// src/components/FilterSection/CreativeFilterSection.jsx
 import "./FilterSection.scss";
 import React, { useState, useEffect, useRef, Fragment } from "react";
 import {
-  Inventory2,
-  DateRange,
-  BarChart,
-  AttachMoney,
+  Inventory2, // Brand Kit
+  FlipToFront, // Logo Placement
+  Campaign, // Channel
+  Brush, // Styling
   KeyboardArrowDown,
   KeyboardArrowUp,
   Check,
 } from "@mui/icons-material";
 
-const FilterSection = () => {
+const CreativeFilterSection = ({ defaultValues, onChange }) => {
   const [selectedFilters, setSelectedFilters] = useState({
-    product: "",
-    timeframe: "",
+    brandKit: "",
+    logoPlacement: "",
     channel: "",
-    spend: "",
+    styling: "",
   });
 
   const [openDropdown, setOpenDropdown] = useState(null);
   const dropdownRefs = useRef({});
 
   const filterOptions = {
-    product: [
-      { id: "shell-station", label: "Shell Station" },
-      { id: "deli2go", label: "Deli2go" },
-      { id: "shell-recharge", label: "Shell Recharge" },
-      { id: "shell-fuels", label: "Shell Fuels" },
+    brandKit: [
+      { id: "product-launch-kit", label: "Product Launch Kit" },
+      { id: "corporate-comms-kit", label: "Corporate Comms Kit" },
+      { id: "festive-promo-kit", label: "Festive Promo Kit" },
+      { id: "india-brand-kit", label: "India Brand Kit" },
     ],
-    timeframe: [
-      { id: "last-7-days", label: "Last 7 days" },
-      { id: "last-15-days", label: "Last 15 days" },
-      { id: "last-30-days", label: "Last 30 days" },
-      { id: "last-60-days", label: "Last 60 days" },
-      { id: "last-90-days", label: "Last 90 days" },
+    logoPlacement: [
+      { id: "top-left", label: "Top Left" },
+      { id: "top-right", label: "Top Right" },
+      { id: "bottom-left", label: "Bottom Left" },
+      { id: "bottom-right", label: "Bottom Right" },
     ],
     channel: [
       { id: "email", label: "Email" },
       { id: "sms", label: "SMS" },
       { id: "instagram", label: "Instagram" },
-      { id: "facebook", label: "Facebook" },
+      { id: "whatsapp", label: "Whatsapp" },
       { id: "google", label: "Google" },
     ],
-    spend: [
-      { id: "above-10000", label: ">10000" },
-      { id: "10k-50k", label: "10k - 50k" },
-      { id: "50k-1l", label: "50k - 1L" },
-      { id: "above-1l", label: "1L>" },
+    styling: [
+      { id: "real", label: "Real" },
+      { id: "abstract", label: "Abstract" },
+      { id: "animation", label: "Animation" },
+      { id: "futuristic", label: "Futuristic" },
     ],
   };
 
@@ -69,16 +69,20 @@ const FilterSection = () => {
   };
 
   const handleFilterSelect = (filterType, value) => {
-    setSelectedFilters((prev) => ({ ...prev, [filterType]: value }));
+    setSelectedFilters((prev) => {
+      const updated = { ...prev, [filterType]: value };
+      onChange?.(updated);
+      return updated;
+    });
     setOpenDropdown(null);
   };
 
   const generateBreadcrumb = () => {
     const parts = [];
-    parts.push(selectedFilters.product || "Product");
-    parts.push(selectedFilters.timeframe || "Timeframe");
+    parts.push(selectedFilters.brandKit || "Brand Kit");
+    parts.push(selectedFilters.logoPlacement || "Logo Placement");
     parts.push(selectedFilters.channel || "Channel");
-    parts.push(selectedFilters.spend || "Spend");
+    parts.push(selectedFilters.styling || "Styling");
     return parts;
   };
 
@@ -137,27 +141,27 @@ const FilterSection = () => {
   const crumb = generateBreadcrumb();
 
   return (
-    <div className="filter-section">
+    <div className="filter-section creative-filter">
       <div className="filter-controls">
         {renderDropdown(
-          "product",
+          "brandKit",
           <Inventory2 sx={{ fontSize: 18, color: "#000000" }} />,
-          "Product"
+          "Brand Kit"
         )}
         {renderDropdown(
-          "timeframe",
-          <DateRange sx={{ fontSize: 18, color: "#000000" }} />,
-          "Timeframe"
+          "logoPlacement",
+          <FlipToFront sx={{ fontSize: 18, color: "#000000" }} />,
+          "Logo Placement"
         )}
         {renderDropdown(
           "channel",
-          <BarChart sx={{ fontSize: 18, color: "#000000" }} />,
+          <Campaign sx={{ fontSize: 18, color: "#000000" }} />,
           "Channel"
         )}
         {renderDropdown(
-          "spend",
-          <AttachMoney sx={{ fontSize: 18, color: "#000000" }} />,
-          "Spend"
+          "styling",
+          <Brush sx={{ fontSize: 18, color: "#000000" }} />,
+          "Styling"
         )}
       </div>
 
@@ -173,4 +177,4 @@ const FilterSection = () => {
   );
 };
 
-export default FilterSection;
+export default CreativeFilterSection;

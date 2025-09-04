@@ -1,0 +1,167 @@
+.
+├── ./.DS_Store
+├── ./.svn
+│   ├── ./.svn/entries
+│   ├── ./.svn/format
+│   ├── ./.svn/pristine
+│   │   ├── ./.svn/pristine/00
+│   │   │   └── ./.svn/pristine/00/0004905e391fe6ea1ffbf45fa7edfe93c18289a8.svn-base
+│   │   ├── ./.svn/pristine/01
+│   │   │   └── ./.svn/pristine/01/01e633187db56680c9a0ee295a8b621cfd3c6c32.svn-base
+│   │   ├── ./.svn/pristine/07
+│   │   │   └── ./.svn/pristine/07/072d64febdcc21d819c8ef75e581910fb96cf124.svn-base
+│   │   ├── ./.svn/pristine/0b
+│   │   │   └── ./.svn/pristine/0b/0b8d83c0dcccff95e29e7fc6d8f6ff4b277ec603.svn-base
+│   │   ├── ./.svn/pristine/14
+│   │   │   └── ./.svn/pristine/14/143cd7859c0fec24a24bf4fefb4c7ff6fa5acba3.svn-base
+│   │   ├── ./.svn/pristine/1f
+│   │   │   └── ./.svn/pristine/1f/1f423073ff7498e45cee8ec9926ba4b087fdc160.svn-base
+│   │   ├── ./.svn/pristine/26
+│   │   │   └── ./.svn/pristine/26/26165adf6490d24c10b5d015f821a5fe5f11a098.svn-base
+│   │   ├── ./.svn/pristine/2c
+│   │   │   └── ./.svn/pristine/2c/2c457028e2e67659f2f5d3ab0c63821ef1c22cfc.svn-base
+│   │   ├── ./.svn/pristine/30
+│   │   │   └── ./.svn/pristine/30/30183a77ec29398b89e3c99dc7844931348190dd.svn-base
+│   │   ├── ./.svn/pristine/35
+│   │   │   └── ./.svn/pristine/35/355c35c8c36692e5bc57f91af4a0f9455a7207ee.svn-base
+│   │   ├── ./.svn/pristine/3f
+│   │   │   └── ./.svn/pristine/3f/3fb0b1601e1d017340dcd89a53ec533065c60d6e.svn-base
+│   │   ├── ./.svn/pristine/51
+│   │   │   └── ./.svn/pristine/51/5115ef5822f08cf4061c8b0fb83816bd4ea4d056.svn-base
+│   │   ├── ./.svn/pristine/53
+│   │   │   └── ./.svn/pristine/53/53882c70c47a57d257cac4e08c5fdb21704a0061.svn-base
+│   │   ├── ./.svn/pristine/5a
+│   │   │   └── ./.svn/pristine/5a/5ad71efd4fa0c0360038f6afd319c4a3bfdeac89.svn-base
+│   │   ├── ./.svn/pristine/67
+│   │   │   └── ./.svn/pristine/67/67a2725abc85f9d7ac2d62c289c3d3768d05ffe3.svn-base
+│   │   ├── ./.svn/pristine/69
+│   │   │   └── ./.svn/pristine/69/6912065b7e6d384a652c893d8b14bdf80405b6cd.svn-base
+│   │   ├── ./.svn/pristine/6d
+│   │   │   └── ./.svn/pristine/6d/6d629da5c716653374c8f86decaf8b23b4c06d0a.svn-base
+│   │   ├── ./.svn/pristine/74
+│   │   │   └── ./.svn/pristine/74/74c6863f81f025c4a595ba902f66b82cffc448b7.svn-base
+│   │   ├── ./.svn/pristine/88
+│   │   │   └── ./.svn/pristine/88/889fa6e9e0c1953b90ad3f1150634e95e29540ab.svn-base
+│   │   ├── ./.svn/pristine/89
+│   │   │   └── ./.svn/pristine/89/895754e50bef66108db656f406140f1fc6842915.svn-base
+│   │   ├── ./.svn/pristine/8f
+│   │   │   └── ./.svn/pristine/8f/8fbcb07e67d389e6f60eba154611d695309b60e0.svn-base
+│   │   ├── ./.svn/pristine/90
+│   │   │   └── ./.svn/pristine/90/908f05a548d13f6bc6837a31985d8059f4e02187.svn-base
+│   │   ├── ./.svn/pristine/94
+│   │   │   └── ./.svn/pristine/94/943682e9c28ec3a457a19d688b04576a14514bc9.svn-base
+│   │   ├── ./.svn/pristine/a6
+│   │   │   └── ./.svn/pristine/a6/a6c618b95f8d43aad586078d9766f115a7351e00.svn-base
+│   │   ├── ./.svn/pristine/aa
+│   │   │   └── ./.svn/pristine/aa/aab40c35b55ad95422205b46d41a2000be1c977a.svn-base
+│   │   ├── ./.svn/pristine/ad
+│   │   │   └── ./.svn/pristine/ad/ad671801b2e91c8d7fe8992d288fa7950ce0cc92.svn-base
+│   │   ├── ./.svn/pristine/ae
+│   │   │   └── ./.svn/pristine/ae/aee51f760f37d08051b8deb1203cdb0d86d10d3b.svn-base
+│   │   ├── ./.svn/pristine/c2
+│   │   │   └── ./.svn/pristine/c2/c2a0c1d94048e185c84d1a4775ec381cbf78d645.svn-base
+│   │   ├── ./.svn/pristine/ca
+│   │   │   └── ./.svn/pristine/ca/ca6f3d335fef705af9ee9631a031b9e6217465c9.svn-base
+│   │   ├── ./.svn/pristine/d5
+│   │   │   ├── ./.svn/pristine/d5/d56b7fc1313534f686dd34231abee03938a74535.svn-base
+│   │   │   └── ./.svn/pristine/d5/d5c0fb89bf8760dfd3afa132f5fa05cd4e8864e5.svn-base
+│   │   ├── ./.svn/pristine/dc
+│   │   │   └── ./.svn/pristine/dc/dceffe9f8ee0de7f30cde66a44a8e70f65843df1.svn-base
+│   │   ├── ./.svn/pristine/e1
+│   │   │   └── ./.svn/pristine/e1/e1eeeee96f8097548b8b309b82d96fabb1266044.svn-base
+│   │   ├── ./.svn/pristine/f5
+│   │   │   └── ./.svn/pristine/f5/f505ddc8ebe56bdc51efb721ef04923a8d3068dd.svn-base
+│   │   ├── ./.svn/pristine/f7
+│   │   │   └── ./.svn/pristine/f7/f7f39d7237b791a945d52a5cd7a8fb365f313366.svn-base
+│   │   └── ./.svn/pristine/f9
+│   │       └── ./.svn/pristine/f9/f97396057473437884f392e366dbc5dc67109465.svn-base
+│   ├── ./.svn/tmp
+│   ├── ./.svn/wc.db
+│   └── ./.svn/wc.db-journal
+├── ./eslint.config.js
+├── ./ignore-new.txt
+├── ./ignore.txt
+├── ./index.html
+├── ./package-lock.json
+├── ./package.json
+├── ./public
+│   └── ./public/vite.svg
+├── ./src
+│   ├── ./src/.DS_Store
+│   ├── ./src/App.jsx
+│   ├── ./src/App.scss
+│   ├── ./src/assets
+│   │   ├── ./src/assets/.DS_Store
+│   │   ├── ./src/assets/Cal.svg
+│   │   ├── ./src/assets/Customer.png
+│   │   ├── ./src/assets/Frame.svg
+│   │   ├── ./src/assets/Graph.svg
+│   │   ├── ./src/assets/LoginImage.png
+│   │   ├── ./src/assets/Overview.png
+│   │   ├── ./src/assets/Pie.svg
+│   │   ├── ./src/assets/Segment.png
+│   │   ├── ./src/assets/SizeIcon.svg
+│   │   ├── ./src/assets/Toggle.png
+│   │   ├── ./src/assets/Vector.svg
+│   │   ├── ./src/assets/collapse-icon.png
+│   │   ├── ./src/assets/desc.svg
+│   │   ├── ./src/assets/kpmg-logo.jpg
+│   │   ├── ./src/assets/kpmg-logo.png
+│   │   ├── ./src/assets/kraftLogo.png
+│   │   ├── ./src/assets/people.svg
+│   │   └── ./src/assets/react.svg
+│   ├── ./src/auth
+│   │   └── ./src/auth/authLoader.js
+│   ├── ./src/components
+│   │   ├── ./src/components/CampaignSection
+│   │   │   ├── ./src/components/CampaignSection/CampaignSection.jsx
+│   │   │   └── ./src/components/CampaignSection/CampaignSection.scss
+│   │   ├── ./src/components/FilterSection
+│   │   │   ├── ./src/components/FilterSection/FilterSection.jsx
+│   │   │   ├── ./src/components/FilterSection/FilterSection.scss
+│   │   │   └── ./src/components/FilterSection/index.js
+│   │   ├── ./src/components/MetricCards
+│   │   │   ├── ./src/components/MetricCards/MetricCards.jsx
+│   │   │   └── ./src/components/MetricCards/MetricCards.scss
+│   │   └── ./src/components/NewCampaignButton
+│   │       ├── ./src/components/NewCampaignButton/NewCampaignButton.jsx
+│   │       └── ./src/components/NewCampaignButton/NewCampaignButton.scss
+│   ├── ./src/index.css
+│   ├── ./src/layout
+│   │   ├── ./src/layout/.DS_Store
+│   │   ├── ./src/layout/DashboardLayout
+│   │   │   ├── ./src/layout/DashboardLayout/DashboardLayout.jsx
+│   │   │   └── ./src/layout/DashboardLayout/DashboardLayout.scss
+│   │   ├── ./src/layout/Footer
+│   │   │   ├── ./src/layout/Footer/.DS_Store
+│   │   │   ├── ./src/layout/Footer/Footer.jsx
+│   │   │   ├── ./src/layout/Footer/Footer.scss
+│   │   │   └── ./src/layout/Footer/index.js
+│   │   ├── ./src/layout/Header
+│   │   │   ├── ./src/layout/Header/Header.jsx
+│   │   │   ├── ./src/layout/Header/Header.scss
+│   │   │   └── ./src/layout/Header/index.js
+│   │   ├── ./src/layout/SideNav
+│   │   │   ├── ./src/layout/SideNav/SideNav.jsx
+│   │   │   └── ./src/layout/SideNav/SideNav.scss
+│   │   └── ./src/layout/SidePanel
+│   │       ├── ./src/layout/SidePanel/SidePanel.jsx
+│   │       ├── ./src/layout/SidePanel/SidePanel.scss
+│   │       └── ./src/layout/SidePanel/index.js
+│   ├── ./src/main.jsx
+│   ├── ./src/pages
+│   │   ├── ./src/pages/About
+│   │   │   └── ./src/pages/About/AboutPage.jsx
+│   │   ├── ./src/pages/Error
+│   │   │   └── ./src/pages/Error/ErrorPage.jsx
+│   │   ├── ./src/pages/Home
+│   │   │   └── ./src/pages/Home/HomePage.jsx
+│   │   └── ./src/pages/Login
+│   │       ├── ./src/pages/Login/Login.jsx
+│   │       └── ./src/pages/Login/Login.scss
+│   └── ./src/router
+│       └── ./src/router/router.jsx
+├── ./structure.txt
+└── ./vite.config.js
+
+60 directories, 105 files

@@ -1,0 +1,251 @@
+/* PromptComposer.scss */
+
+/* Outer card — same as .filter-section wrapper */
+.prompt-card {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Top row: pills & dropdown */
+.prompt-card .row.controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  /* Container for any pill or dropdown */
+  .filter-dropdown-container {
+    position: relative;
+  }
+
+  /* Shared pill/dropdown style */
+  .filter-dropdown,
+  .pill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px; /* same vertical/horizontal as filter section */
+    gap: 10px; /* same icon-text gap */
+    background: #ffffff;
+    border: 1px solid #e1e1e1;
+    border-radius: 12px;
+    cursor: pointer;
+    min-width: 150px; /* same min-width */
+    user-select: none;
+
+    font-weight: 500;
+    font-size: 16px;
+    color: #000000;
+    transition: all 0.2s ease;
+
+    &:hover,
+    &.open {
+      border-color: #4648ff;
+      box-shadow: 0 2px 8px rgba(70, 72, 255, 0.1);
+    }
+
+    .icon {
+      font-size: 18px;
+    }
+
+    .filter-label {
+      flex-grow: 1;
+      text-align: left;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  /* Make static pills non-interactive and with a subtle gradient */
+  .pill {
+    cursor: default;
+
+    &.input-pill {
+      background: linear-gradient(
+        90deg,
+        #f5f5f5 0%,
+        #ebebeb 100%
+      ); /* light grey gradient */
+    }
+    &.code-pill {
+      min-width: 140px;
+      text-align: left;
+      border: 0px;
+      border-radius: 3px;
+      padding: 12px;
+    }
+    &.title-pill {
+      justify-content: flex-start; /* ← left-align */
+      flex: 1;
+      min-width: 0; /* allow ellipsis */
+      padding-left: 16px; /* same left-padding as others */
+      border-radius: 3px;
+    }
+  }
+}
+
+/* Prompt display area (top part) */
+.prompt-card .prompt-display {
+  background: linear-gradient(
+    90deg,
+    #e9ebf5 0%,
+    #e3e6f3 100%
+  ); /* Perfected gradient */
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 20px 24px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #5f6483; /* Softer text color */
+  text-align: left;
+}
+
+/* Actions area (bottom part) */
+.prompt-card .row.prompt-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: linear-gradient(
+    90deg,
+    #f4f5fa 0%,
+    #f0f2f9 100%
+  ); /* Lighter gradient */
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 12px 24px;
+  margin-top: -20px; /* Pulls up to hide the gap */
+}
+
+/* Regenerate button */
+.prompt-card .row.prompt-actions button.outline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1.5px solid #4648ff;
+  border-radius: 8px; /* Slightly tighter radius */
+  background: transparent;
+  color: #4648ff;
+  font-weight: 600; /* Bolder font */
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: rgba(70, 72, 255, 0.05);
+  }
+}
+
+.prompt-card .row.prompt-actions .spacer {
+  flex: 1;
+}
+
+/* Mic and Submit icons */
+.prompt-card .row.prompt-actions .ghost {
+  color: #333;
+  cursor: pointer;
+}
+
+.prompt-card .row.prompt-actions .submit {
+  background: #e9e9ed;
+  border-radius: 50%;
+  padding: 8px;
+  display: flex;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background: #dcdce1;
+  }
+}
+
+/* Dropdown menu & items — exactly like filter-section */
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e1e1e1;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 1000;
+  animation: dropdownFadeIn 0.2s ease-out;
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 60px;
+  border-radius: 8px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+
+  &:hover,
+  &.selected {
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 8px;
+      background-color: #4648ff;
+      border-radius: 8px 0 0 8px;
+    }
+  }
+}
+
+.dropdown-item-label {
+  font-weight: 500;
+  font-size: 16px;
+  color: #000;
+  flex-grow: 1;
+  text-align: center;
+}
+
+/* Editable prompt textarea */
+.prompt-card .prompt-input {
+  width: 100%;
+  border: 1px solid #e1e1e1;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-bottom: none;
+  outline: none;
+  overflow: hidden; /* hide scrollbar while auto-expanding */
+  resize: none; /* hide resize handle */
+
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #5f6483;
+
+  padding: 20px 24px;
+  background: linear-gradient(90deg, #e9ebf5 0%, #e3e6f3 100%);
+  box-sizing: border-box;
+}
