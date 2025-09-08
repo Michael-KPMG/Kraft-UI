@@ -1,4 +1,5 @@
-import { useLocation } from "react-router-dom";
+// src/pages/CreativeStudio/CreativeStudio.jsx
+import { useLocation, useNavigate } from "react-router-dom";
 import { ImageOutlined, CalendarMonth, Refresh } from "@mui/icons-material";
 
 import Stepper from "@/components/Stepper/Stepper";
@@ -10,7 +11,17 @@ import "./CreativeStudio.scss";
 
 const CreativeStudio = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const prefill = location.state || {};
+
+  // Default values (same as used for PromptComposer)
+  const campaignCodeDefault = prefill.campaignCode || "C1_Insta_001";
+  const titleDefault =
+    prefill.title ||
+    "Instagram Post for Working Male Millennials promoting Deli2go";
+  const promptDefault =
+    prefill.prompt ||
+    "Visualize a shot of a Indian millennial man leaning against his car at a Shell station, holding a coffee cup from the convenience store. He’s on his phone, perhaps sharing a quick update with a partner or friend, or looking at a map for a planned outing.";
 
   const steps = [
     { key: "creative", label: "Creative", status: "done" },
@@ -23,27 +34,45 @@ const CreativeStudio = () => {
     "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?q=80&w=800&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1520473378652-85d9c4aee6cf?q=80&w=800&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1546817377-47e2b8dc1d0d?q=80&w=800&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1520473378652-85d9c4aee6cf?q=80&w=800&auto=format&fit=crop",
   ];
+
+  // Handler called when ImageGrid action button is clicked.
+  // actionKey: the action key from actions[] (e.g. 'save' or 'regen')
+  // image: the image url for that card
+  const handleImageAction = (actionKey, image) => {
+    if (actionKey === "save") {
+      // navigate to the new page and pass useful state (prefill values + selected image)
+      navigate("/creative-studio/save-image", {
+        state: {
+          campaignCode: campaignCodeDefault,
+          title: titleDefault,
+          prompt: promptDefault,
+          selectedImage: image,
+        },
+      });
+      return;
+    }
+
+    if (actionKey === "regen") {
+      // You can implement regeneration logic here (API call, re-request generation, etc.)
+      console.log("Regenerate image:", image);
+      // Example: open a spinner, call API then refresh that image.
+      return;
+    }
+
+    // handle other actions as needed
+    console.log("Action", actionKey, "on", image);
+  };
 
   return (
     <div className="creative-studio">
-      <div className="top-line">
-        <span className="page-title">Creative studio</span>
-      </div>
-
-      <Stepper steps={steps} currentIndex={0} />
+      <Stepper steps={steps} />
 
       <PromptComposer
-        campaignCode={prefill.campaignCode || "C1_Insta_001"}
-        title={
-          prefill.title ||
-          "Instagram Post for Working Male Millennials promoting Deli2go"
-        }
-        prompt={
-          prefill.prompt ||
-          "Visualize a shot of a Indian millennial man leaning against his car at a Shell station, holding a coffee cup from the convenience store. He’s on his phone, perhaps sharing a quick update with a partner or friend, or looking at a map for a planned outing."
-        }
+        campaignCode={campaignCodeDefault}
+        title={titleDefault}
+        prompt={promptDefault}
       />
 
       <CreativeFilterSection
@@ -56,7 +85,14 @@ const CreativeStudio = () => {
       />
 
       <div className="cta-row">
-        <button className="primary-cta">
+        <button
+          className="primary-cta"
+          onClick={() => {
+            // Example: clicking generate can navigate or trigger generation flow.
+            // For now leave as console (or navigate to creative page)
+            console.log("generate the image clicked");
+          }}
+        >
           <ImageOutlined sx={{ fontSize: 18, color: "#fff" }} />
           Generate the image
         </button>
@@ -85,6 +121,8 @@ const CreativeStudio = () => {
             icon: <ImageOutlined sx={{ fontSize: 18 }} />,
           },
         ]}
+        // our callback for action clicks
+        onAction={handleImageAction}
       />
     </div>
   );

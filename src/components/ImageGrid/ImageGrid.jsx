@@ -1,9 +1,28 @@
+// src/components/ImageGrid/ImageGrid.jsx
 import { CheckCircle } from "@mui/icons-material";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./ImageGrid.scss";
 
 const ImageGrid = ({ title, images = [], actions = [] }) => {
   const [selected, setSelected] = useState(0);
+  const navigate = useNavigate();
+
+  // Minimal action handler: only redirect for "save".
+  const handleAction = (actionKey) => {
+    if (actionKey === "save") {
+      // Simple redirect to the new page
+      navigate("/creative-studio/save-image");
+
+      // If you want to send the selected image (or other data) to the new page,
+      // use location.state like this instead:
+      // navigate("/creative-studio/save-image", { state: { selectedImage: images[selected] } });
+      return;
+    }
+
+    // Keep original (no-op) behavior for other actions for now
+    // You can add handling for 'regen' etc. here if needed.
+  };
 
   return (
     <div className="image-grid-card">
@@ -31,7 +50,7 @@ const ImageGrid = ({ title, images = [], actions = [] }) => {
           <button
             key={a.key}
             className={a.primary ? "btn primary" : "btn outline"}
-            onClick={() => {}}
+            onClick={() => handleAction(a.key)}
           >
             {a.icon} {a.label}
           </button>

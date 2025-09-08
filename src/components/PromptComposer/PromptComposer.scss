@@ -33,7 +33,6 @@
     padding: 15px; /* same vertical/horizontal as filter section */
     gap: 10px; /* same icon-text gap */
     background: #ffffff;
-    border: 1px solid #e1e1e1;
     border-radius: 12px;
     cursor: pointer;
     min-width: 150px; /* same min-width */
@@ -46,7 +45,7 @@
 
     &:hover,
     &.open {
-      border-color: #4648ff;
+      // border-color: #4648ff;
       box-shadow: 0 2px 8px rgba(70, 72, 255, 0.1);
     }
 
@@ -85,7 +84,7 @@
       justify-content: flex-start; /* ← left-align */
       flex: 1;
       min-width: 0; /* allow ellipsis */
-      padding-left: 16px; /* same left-padding as others */
+      padding-left: 12px; /* same left-padding as others */
       border-radius: 3px;
     }
   }

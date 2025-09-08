@@ -1,0 +1,26 @@
+.creative-page {
+  padding: 0;  /* more left alignment like dashboard content */
+  background: var(--bg);
+
+  .creative-section {
+    background: var(--card);
+    border-radius: 8px;
+    // padding: 16px 20px;
+    margin-bottom: 16px; /* reduce vertical spacing */
+  }
+
+  .progress-wrapper {
+    margin-bottom: 12px; /* tighter gap after progress bar */
+  }
+
+  .row {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* space between button and heading */
+    margin-top: 8px; /* small gap above row */
+  }
+
+  .spacer {
+    height: 2px; /* smaller spacer than before */
+  }
+}
