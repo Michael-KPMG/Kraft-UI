@@ -5,7 +5,7 @@ import Stepper from "@/components/Stepper/Stepper"; // <-- use your Stepper here
 import TextBar from "@/components/TextBar/TextBar";
 import GenerateCopyButton from "@/components/GenerateCopyButton/GenerateCopyButton";
 import ContentCard from "@/components/ContentCard/ContentCard";
-
+import CreativeOptions from "@/components/CreativeOptions/CreativeOptions";
 const CreativePage = () => {
   // Original data from teammate's ProgressBar usage
   const labels = ["Creative", "Content", "Preview", "Approve"];
@@ -42,6 +42,9 @@ const CreativePage = () => {
 
       <div className="creative-section">
         <ContentCard />
+      </div>
+      <div>
+        <CreativeOptions />
       </div>
     </div>
   );
