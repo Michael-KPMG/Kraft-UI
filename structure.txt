@@ -6,6 +6,10 @@
 │   ├── App.scss
 │   ├── assets
 │   │   ├── .DS_Store
+│   │   ├── 1_.png
+│   │   ├── 2_.png
+│   │   ├── 3_.png
+│   │   ├── 4_.png
 │   │   ├── Cal.svg
 │   │   ├── ChatCircle.svg
 │   │   ├── Customer.png

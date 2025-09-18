@@ -122,25 +122,14 @@
   }
 
   &.active {
-    background: transparent;
+    background: #e6f0ff; // subtle highlight color
+    color: #007bff; // highlight text
+    font-weight: 600;
 
-    &::before {
-      content: "";
-      width: 16px;
-      height: 16px;
-      flex-shrink: 0;
-      order: 1;
-    }
-
-    .nav-icon {
-      order: 2;
-    }
-
-    .nav-text {
-      order: 3;
-    }
+   
   }
 }
+
 
 .nav-arrow {
   width: 16px;

@@ -1,21 +1,16 @@
 import React from "react";
-import {
-  BarChart,
-  ArrowForwardIos,
-  KeyboardArrowDown,
-} from "@mui/icons-material";
+import { NavLink } from "react-router-dom";
+import { ArrowForwardIos, KeyboardArrowDown } from "@mui/icons-material";
 import kpmgLogo from "../../assets/kpmg-logo.png";
-import overviewIcon from "../../assets/Overview.png";
-import segmentIcon from "../../assets/Segment.png";
 import customerIcon from "../../assets/Customer.png";
 import "./Sidenav.scss";
 
 const Sidenav = ({ isCollapsed }) => {
   const navItems = [
-    { name: "Overview", icon: "image", iconSrc: overviewIcon, active: true },
-    { name: "Campaigns", icon: "image", iconSrc: segmentIcon, active: false },
-    { name: "Customers", icon: "image", iconSrc: customerIcon, active: false },
-    { name: "Reports", icon: "image", iconSrc: customerIcon, active: false },
+    { name: "Dashboard", path: "/", type: "link" },
+    { name: "Creative Studio", path: "/creative-studio", type: "link" },
+    { name: "Brand Studio", type: "static" },
+    { name: "Campaigns", type: "static" },
   ];
 
   return (
@@ -29,36 +24,54 @@ const Sidenav = ({ isCollapsed }) => {
 
         {/* Navigation Menu */}
         <div className="nav-menu">
-          {navItems.map((item, index) => {
-            return (
-              <div
+          {navItems.map((item, index) =>
+            item.type === "link" ? (
+              <NavLink
                 key={index}
-                className={`nav-item ${item.active ? "active" : ""}`}
+                to={item.path}
+                className={({ isActive }) =>
+                  `nav-item ${isActive ? "active" : ""}`
+                }
                 title={isCollapsed ? item.name : ""}
               >
                 <div className="nav-icon">
-                  {item.icon === "image" ? (
-                    <img
-                      src={item.iconSrc}
-                      alt={item.name}
-                      width="20"
-                      height="20"
-                    />
-                  ) : (
-                    <item.icon sx={{ fontSize: 20, color: "#000000" }} />
-                  )}
+                  <img
+                    src={customerIcon}
+                    alt={item.name}
+                    width="20"
+                    height="20"
+                  />
                 </div>
                 <div className="nav-text">{item.name}</div>
-                {!item.active && (
-                  <div className="nav-arrow">
-                    <ArrowForwardIos
-                      sx={{ fontSize: 16, color: "rgba(0, 0, 0, 0.2)" }}
-                    />
-                  </div>
-                )}
+                <div className="nav-arrow">
+                  <ArrowForwardIos
+                    sx={{ fontSize: 16, color: "rgba(0, 0, 0, 0.2)" }}
+                  />
+                </div>
+              </NavLink>
+            ) : (
+              <div
+                key={index}
+                className="nav-item"
+                title={isCollapsed ? item.name : ""}
+              >
+                <div className="nav-icon">
+                  <img
+                    src={customerIcon}
+                    alt={item.name}
+                    width="20"
+                    height="20"
+                  />
+                </div>
+                <div className="nav-text">{item.name}</div>
+                <div className="nav-arrow">
+                  <ArrowForwardIos
+                    sx={{ fontSize: 16, color: "rgba(0, 0, 0, 0.2)" }}
+                  />
+                </div>
               </div>
-            );
-          })}
+            )
+          )}
         </div>
       </div>
 

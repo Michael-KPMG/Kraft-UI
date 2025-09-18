@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Check } from "@mui/icons-material"; // Import the MUI Check icon
+import { Check } from "@mui/icons-material";
 import styles from "./CreativeOptions.module.scss";
 
 import option1Img from "../../assets/Promt-gen 1.svg";
