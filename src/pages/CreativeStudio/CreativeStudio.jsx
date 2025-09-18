@@ -7,6 +7,11 @@ import PromptComposer from "@/components/PromptComposer/PromptComposer";
 import CreativeFilterSection from "@/components/FilterSection/CreativeFilterSection";
 import ImageGrid from "@/components/ImageGrid/ImageGrid";
 
+import Img1 from "@/assets/Promt-gen 1.svg";
+import Img2 from "@/assets/Promt gen 2.svg";
+import Img3 from "@/assets/Promt gen 3.svg";
+import Img4 from "@/assets/Promt gen 4.svg";
+
 import "./CreativeStudio.scss";
 
 const CreativeStudio = () => {
@@ -30,12 +35,8 @@ const CreativeStudio = () => {
     { key: "approve", label: "Approve", status: "pending" },
   ];
 
-  const images = [
-    "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1520473378652-85d9c4aee6cf?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1520473378652-85d9c4aee6cf?q=80&w=800&auto=format&fit=crop",
-  ];
+  
+const images = [Img1, Img2, Img3, Img4];
 
   // Handler called when ImageGrid action button is clicked.
   // actionKey: the action key from actions[] (e.g. 'save' or 'regen')

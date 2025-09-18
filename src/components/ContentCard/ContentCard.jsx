@@ -1,11 +1,9 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom"; // ✅ import navigate hook
+import styles from "./ContentCard.module.scss";
 
-import { useState } from 'react';
-import ReplayIcon from '@mui/icons-material/Replay';
-import SaveIcon from '@mui/icons-material/Save';
-import styles from './ContentCard.module.scss';
-
-import save from '../../assets/save-icon.svg';
-import repeat from '../../assets/repeat-icon.svg';
+import save from "../../assets/save-icon.svg";
+import repeat from "../../assets/repeat-icon.svg";
 
 export default function ContentCard({
   title = "Generation for Instagram",
@@ -15,6 +13,12 @@ export default function ContentCard({
 }) {
   const [editing, setEditing] = useState(false);
   const [value, setValue] = useState("");
+  const navigate = useNavigate(); // ✅ initialize navigate
+
+  const handleSave = () => {
+    if (onSave) onSave(); // still call your parent handler if provided
+    navigate("/creative-studio/preview"); // ✅ go to preview page
+  };
 
   return (
     <div className={styles.card}>
@@ -46,25 +50,15 @@ export default function ContentCard({
             className={styles.regenBtn}
             onClick={onRegenerate}
           >
-           <img
-              src={repeat}
-               alt="repeat"
-               width={16}
-               height={16}
-                />
+            <img src={repeat} alt="repeat" width={16} height={16} />
             Regenerate
           </button>
           <button
             className={styles.saveBtn}
-            onClick={onSave}
-          >Save the Copy
-           <img
-              src={save}
-               alt="save"
-               width={18}
-               height={18}
-                />
-            
+            onClick={handleSave} // ✅ use new handler
+          >
+            Save the Copy
+            <img src={save} alt="save" width={18} height={18} />
           </button>
         </div>
       </div>

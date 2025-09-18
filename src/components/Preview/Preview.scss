@@ -1,0 +1,82 @@
+.preview-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.preview-heading {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+
+  svg {
+    color: #5b6cff; // purple/blue like figma
+    font-size: 18px;
+  }
+}
+
+.preview-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: "Inter", sans-serif;
+}
+
+.preview-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  .status-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #FFD12FB2;
+    color: black;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+
+    svg {
+      font-size: 16px;
+    }
+  }
+
+  .campaign-id {
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+  }
+}
+
+.preview-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #666;
+
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    svg {
+      font-size: 16px;
+      color: #999;
+    }
+  }
+
+  .meta-separator {
+    color: #aaa;
+  }
+}

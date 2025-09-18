@@ -1,13 +1,14 @@
-// src/pages/Creative/Creative.jsx
+
 import "./Creative.scss";
 
-import Stepper from "@/components/Stepper/Stepper"; // <-- use your Stepper here
+import Stepper from "@/components/Stepper/Stepper"; 
 import TextBar from "@/components/TextBar/TextBar";
 import GenerateCopyButton from "@/components/GenerateCopyButton/GenerateCopyButton";
 import ContentCard from "@/components/ContentCard/ContentCard";
 import CreativeOptions from "@/components/CreativeOptions/CreativeOptions";
+import Preview from "@/components/Preview/Preview";
+
 const CreativePage = () => {
-  // Original data from teammate's ProgressBar usage
   const labels = ["Creative", "Content", "Preview", "Approve"];
   const activeIndex = 2; // example value from teammate (0-based)
   const completed = [0, 1]; // example indices that are completed
@@ -34,6 +35,7 @@ const CreativePage = () => {
           label="Generate a short, authentic Instagram caption (30–50 words)…"
           showRegenerate
         />
+        {/* <CreativeOptions/> */}
       </div>
 
       <div className="creative-section row">
@@ -43,9 +45,9 @@ const CreativePage = () => {
       <div className="creative-section">
         <ContentCard />
       </div>
-      <div>
-        <CreativeOptions />
-      </div>
+      {/* <div className="preview-section">
+        <Preview/>
+      </div> */}
     </div>
   );
 };

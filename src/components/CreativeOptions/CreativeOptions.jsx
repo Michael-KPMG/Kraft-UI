@@ -6,7 +6,14 @@ import option1Img from "../../assets/Promt-gen 1.svg";
 import option2Img from "../../assets/Promt gen 2.svg";
 import option3Img from "../../assets/Promt gen 3.svg";
 import option4Img from "../../assets/Promt gen 4.svg";
-import userAvatar from "../../assets/react.svg";
+import userAvatar from "../../assets/shell.svg";
+import user_icon from "../../assets/user_icon.svg";
+import heart from "../../assets/heart.svg";
+import comment from "../../assets/ChatCircle.svg";
+import share from "../../assets/share_icon.svg";
+import bookmark from "../../assets/bookmark.svg";
+import publish from "../../assets/publish.svg";
+import changes from "../../assets/changes.svg";
 
 export default function CreativeOptions() {
   const [selectedOption, setSelectedOption] = useState(1);
@@ -37,10 +44,10 @@ export default function CreativeOptions() {
         </div>
 
         <div className={styles.actionsRow}>
-          <span className={styles.icon}>♡</span>
-          <span className={styles.icon}>💬</span>
-          <span className={styles.icon}>✈️</span>
-          <span className={`${styles.icon} ${styles.bookmark}`}>🔖</span>
+          <img src={heart} alt="Heart" className={styles.icon} />
+          <img src={comment} alt="Comment" className={styles.icon} />
+          <img src={share} alt="Share" className={styles.icon} />
+          <img src={bookmark} alt="Bookmark" className={`${styles.icon} ${styles.bookmark}`} />
         </div>
       </div>
       <p className={styles.description}>
@@ -77,7 +84,7 @@ export default function CreativeOptions() {
           <h4>Feedback</h4>
           <div className={styles.feedbackCard}>
             <div className={styles.commentTop}>
-              <img src={userAvatar} alt="Arun" className={styles.avatar} />
+              <img src={user_icon} alt="Arun" className={styles.avatar} />
               <span className={styles.commentName}>Arun</span>
             </div>
             <div className={styles.commentBody}>
@@ -88,8 +95,15 @@ export default function CreativeOptions() {
         </div>
 
         <div className={styles.actionsBottom}>
-          <button className={styles.requestBtn}>✏️ Request Changes</button>
-          <button className={styles.approveBtn}>Approve & Publish ✔</button>
+          <button className={styles.requestBtn}>
+            <img src={changes} alt="Request Changes" className={styles.icon} />
+            Request Changes
+          </button>
+
+          <button className={styles.approveBtn}>
+              Approve & Publish
+            <img src={publish} alt="Approve & Publish" className={styles.icon} />
+          </button>
         </div>
       </aside>
     </div>
