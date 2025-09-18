@@ -1,81 +1,274 @@
-// Cards Section
-.cards-container {
-  position: relative;
-  width: 100%;
-  margin: 0 0 20px 0;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  justify-content: start;
-}
+.metric-cards-root {
+  $card-height: 231px;
+  $card-padding: 20px;
+  $font-primary: "Poppins", sans-serif;
 
-.metric-card {
-  position: relative;
-  width: 100%;
-  height: 231px;
-  border-radius: 20px;
-  padding: 24px;
-  color: white;
-  overflow: hidden;
-  box-sizing: border-box;
-
-  &.card-blue {
-    background: linear-gradient(135deg, #4648ff 0%, #3b3dcc 100%);
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
   }
 
-  &.card-orange {
-    background: linear-gradient(135deg, #ff9800 0%, #e68900 100%);
+  @media (max-width: 1200px) {
+    .cards-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
-  &.card-purple {
-    background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
+  @media (max-width: 768px) {
+    .cards-container {
+      grid-template-columns: 1fr;
+    }
   }
 
-  &.card-green {
-    background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);
+  .metric-card {
+    position: relative;
+    width: 100%;
+    min-height: $card-height;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &.card-blue {
+      background-image: url("../../assets/1_.png");
+      color: #fff;
+    }
+    &.card-orange {
+      background-image: url("../../assets/2_.png");
+      color: #1a1a1a;
+    }
+    &.card-green {
+      background-image: url("../../assets/3_.png");
+      color: #1a1a1a;
+    }
+    &.card-purple {
+      background-image: url("../../assets/4_.png");
+      color: #fff;
+      .card-title {
+        font-size: 18px;
+        font-weight: 500;
+      }
+    }
+
+    .card-content {
+      padding: $card-padding;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-main-content {
+      flex-grow: 1;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .card-footer {
+      font-family: $font-primary;
+      font-size: 12px;
+      margin-top: auto;
+      opacity: 0.9;
+      font-weight: 500;
+    }
   }
-}
 
-.card-title {
-  font-family: "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  opacity: 0.9;
-  margin-bottom: 8px;
-}
+  .card-title {
+    font-family: $font-primary;
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+  .card-value {
+    font-family: $font-primary;
+    font-weight: 700;
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
 
-.card-value {
-  font-family: "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 1.2;
-  margin-bottom: 16px;
-}
+  // Charts
+  .card-chart {
+    width: 100%;
+    canvas {
+      width: 100% !important;
+      height: 100% !important;
+    }
+  }
+  .chart-spends {
+    height: 95px;
+  }
 
-.card-chart {
-  height: 80px;
-  margin-bottom: 16px;
-}
+  .chart-sales {
+    height: 85px;
+    margin-bottom: 6px;
+  }
 
-.card-comparison {
-  font-family: "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
-  font-weight: 400;
-  font-size: 12px;
-  opacity: 0.8;
-}
+  .sales-chart-wrapper {
+    position: relative;
+    margin-top: -10px;
+  }
 
-// Progress bars
-.progress-bar {
-  width: 100%;
-  height: 6px;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 3px;
-  overflow: hidden;
-  margin-top: 4px;
-}
+  .sales-chart-values {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    pointer-events: none;
 
-.progress-fill {
-  height: 100%;
-  border-radius: 3px;
-  transition: width 0.3s ease;
+    span {
+      position: absolute;
+      font-family: $font-primary;
+      font-size: 13px;
+      font-weight: 600;
+      color: #1a1a1a;
+      white-space: nowrap;
+      transform: translateY(-50%);
+    }
+
+    span:nth-child(1) {
+      left: 7%;
+      top: 38%;
+    }
+    span:nth-child(2) {
+      left: 50%;
+      transform: translate(-50%, -50%);
+      top: 17%;
+    }
+    span:nth-child(3) {
+      right: 7%;
+      top: -4%;
+    }
+  }
+
+  .chart-xaxis {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 0 8px;
+    color: #1a1a1a;
+  }
+
+  // Leads (Card 2)
+  .leads-list {
+    margin-top: 10px;
+  }
+  .leads-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+  .leads-month {
+    width: 40px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .progress-bar {
+    flex-grow: 1;
+    height: 10px;
+    background: #e9e3ff;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    border-radius: 20px;
+    transition: width 0.3s ease;
+    position: relative;
+  }
+
+  // Conversion (Card 4) - Responsive
+  .conversions-list {
+    margin-top: 16px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 0;
+  }
+  .conversion-item {
+    margin-bottom: 8px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .conversion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+    font-family: $font-primary;
+    flex-wrap: wrap;
+
+    .source {
+      font-size: 14px;
+      font-weight: 500;
+      flex-shrink: 0;
+    }
+    .details {
+      font-size: 12px;
+      font-weight: 400;
+      opacity: 0.9;
+      flex-grow: 1;
+      margin: 0 8px;
+      min-width: 80px;
+    }
+    .rate {
+      font-size: 14px;
+      font-weight: 500;
+      color: #3de8e8;
+      flex-shrink: 0;
+    }
+  }
+  .conversion-bar {
+    height: 8px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.4);
+    overflow: hidden;
+    margin-bottom: 4px;
+    .progress-fill {
+      height: 100%;
+      border-radius: 20px;
+      transition: width 0.3s ease;
+
+      &.purple {
+        background: #8a47ff;
+      }
+      &.blue {
+        background: #2962ff;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .metric-card {
+      min-height: 200px;
+    }
+    .card-title {
+      font-size: 16px;
+    }
+    .card-footer {
+      font-size: 11px;
+    }
+    .conversion-header {
+      .source {
+        font-size: 13px;
+      }
+      .details {
+        font-size: 11px;
+      }
+      .rate {
+        font-size: 13px;
+      }
+    }
+    .conversions-list {
+      margin-top: 12px;
+      justify-content: flex-start;
+    }
+    .conversion-item {
+      margin-bottom: 6px;
+    }
+  }
 }

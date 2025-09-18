@@ -1,104 +1,137 @@
-.
-├── ./.DS_Store
-├── ./eslint.config.js
-├── ./ignore-new.txt
-├── ./ignore.txt
-├── ./index.html
-├── ./package-lock.json
-├── ./package.json
-├── ./public
-│   └── ./public/vite.svg
-├── ./src
-│   ├── ./src/.DS_Store
-│   ├── ./src/App.jsx
-│   ├── ./src/App.scss
-│   ├── ./src/assets
-│   │   ├── ./src/assets/.DS_Store
-│   │   ├── ./src/assets/Cal.svg
-│   │   ├── ./src/assets/Customer.png
-│   │   ├── ./src/assets/Frame.svg
-│   │   ├── ./src/assets/Graph.svg
-│   │   ├── ./src/assets/LoginImage.png
-│   │   ├── ./src/assets/Overview.png
-│   │   ├── ./src/assets/Pie.svg
-│   │   ├── ./src/assets/Segment.png
-│   │   ├── ./src/assets/SizeIcon.svg
-│   │   ├── ./src/assets/Toggle.png
-│   │   ├── ./src/assets/Vector.svg
-│   │   ├── ./src/assets/collapse-icon.png
-│   │   ├── ./src/assets/desc.svg
-│   │   ├── ./src/assets/kpmg-logo.jpg
-│   │   ├── ./src/assets/kpmg-logo.png
-│   │   ├── ./src/assets/kraftLogo.png
-│   │   ├── ./src/assets/people.svg
-│   │   └── ./src/assets/react.svg
-│   ├── ./src/auth
-│   │   └── ./src/auth/authLoader.js
-│   ├── ./src/components
-│   │   ├── ./src/components/.DS_Store
-│   │   ├── ./src/components/CampaignSection
-│   │   │   ├── ./src/components/CampaignSection/CampaignSection.jsx
-│   │   │   └── ./src/components/CampaignSection/CampaignSection.scss
-│   │   ├── ./src/components/CreativeToolbar
-│   │   │   ├── ./src/components/CreativeToolbar/CreativeToolbar.jsx
-│   │   │   └── ./src/components/CreativeToolbar/CreativeToolbar.scss
-│   │   ├── ./src/components/FilterSection
-│   │   │   ├── ./src/components/FilterSection/CreativeFilterSection.jsx
-│   │   │   ├── ./src/components/FilterSection/FilterSection.jsx
-│   │   │   ├── ./src/components/FilterSection/FilterSection.scss
-│   │   │   └── ./src/components/FilterSection/index.js
-│   │   ├── ./src/components/ImageGrid
-│   │   │   ├── ./src/components/ImageGrid/ImageGrid.jsx
-│   │   │   └── ./src/components/ImageGrid/ImageGrid.scss
-│   │   ├── ./src/components/MetricCards
-│   │   │   ├── ./src/components/MetricCards/MetricCards.jsx
-│   │   │   └── ./src/components/MetricCards/MetricCards.scss
-│   │   ├── ./src/components/NewCampaignButton
-│   │   │   ├── ./src/components/NewCampaignButton/NewCampaignButton.jsx
-│   │   │   └── ./src/components/NewCampaignButton/NewCampaignButton.scss
-│   │   ├── ./src/components/PromptComposer
-│   │   │   ├── ./src/components/PromptComposer/PromptComposer.jsx
-│   │   │   └── ./src/components/PromptComposer/PromptComposer.scss
-│   │   └── ./src/components/Stepper
-│   │       ├── ./src/components/Stepper/Stepper.jsx
-│   │       └── ./src/components/Stepper/Stepper.scss
-│   ├── ./src/index.css
-│   ├── ./src/layout
-│   │   ├── ./src/layout/.DS_Store
-│   │   ├── ./src/layout/DashboardLayout
-│   │   │   ├── ./src/layout/DashboardLayout/DashboardLayout.jsx
-│   │   │   └── ./src/layout/DashboardLayout/DashboardLayout.scss
-│   │   ├── ./src/layout/Footer
-│   │   │   ├── ./src/layout/Footer/.DS_Store
-│   │   │   ├── ./src/layout/Footer/Footer.jsx
-│   │   │   ├── ./src/layout/Footer/Footer.scss
-│   │   │   └── ./src/layout/Footer/index.js
-│   │   ├── ./src/layout/Header
-│   │   │   ├── ./src/layout/Header/Header.jsx
-│   │   │   ├── ./src/layout/Header/Header.scss
-│   │   │   └── ./src/layout/Header/index.js
-│   │   ├── ./src/layout/SideNav
-│   │   │   ├── ./src/layout/SideNav/SideNav.jsx
-│   │   │   └── ./src/layout/SideNav/SideNav.scss
-│   │   └── ./src/layout/SidePanel
-│   │       ├── ./src/layout/SidePanel/SidePanel.jsx
-│   │       ├── ./src/layout/SidePanel/SidePanel.scss
-│   │       └── ./src/layout/SidePanel/index.js
-│   ├── ./src/main.jsx
-│   ├── ./src/pages
-│   │   ├── ./src/pages/About
-│   │   │   └── ./src/pages/About/AboutPage.jsx
-│   │   ├── ./src/pages/CreativeStudio
-│   │   │   ├── ./src/pages/CreativeStudio/CreativeStudio.jsx
-│   │   │   └── ./src/pages/CreativeStudio/CreativeStudio.scss
-│   │   ├── ./src/pages/Error
-│   │   │   └── ./src/pages/Error/ErrorPage.jsx
-│   │   ├── ./src/pages/Home
-│   │   │   └── ./src/pages/Home/HomePage.jsx
-│   │   └── ./src/pages/Login
-│   │       ├── ./src/pages/Login/Login.jsx
-│   │       └── ./src/pages/Login/Login.scss
-│   └── ./src/router
-│       └── ./src/router/router.jsx
-├── ./structure.txt
-└── ./vite.config.js
+├── public
+│   └── vite.svg
+├── src
+│   ├── .DS_Store
+│   ├── App.jsx
+│   ├── App.scss
+│   ├── assets
+│   │   ├── .DS_Store
+│   │   ├── Cal.svg
+│   │   ├── ChatCircle.svg
+│   │   ├── Customer.png
+│   │   ├── Frame.svg
+│   │   ├── Graph.svg
+│   │   ├── Heart.svg
+│   │   ├── LoginImage.png
+│   │   ├── Overview.png
+│   │   ├── Pie.svg
+│   │   ├── Promt gen 2.svg
+│   │   ├── Promt gen 3.svg
+│   │   ├── Promt gen 4.svg
+│   │   ├── Promt-gen 1.svg
+│   │   ├── Segment.png
+│   │   ├── SizeIcon.svg
+│   │   ├── Toggle.png
+│   │   ├── Vector.svg
+│   │   ├── bookmark.svg
+│   │   ├── cal_icon.svg
+│   │   ├── changes.svg
+│   │   ├── channel_icon.svg
+│   │   ├── clock_icon.svg
+│   │   ├── collapse-icon.png
+│   │   ├── copy.svg
+│   │   ├── desc.svg
+│   │   ├── kpmg-logo.jpg
+│   │   ├── kpmg-logo.png
+│   │   ├── kraftLogo.png
+│   │   ├── mic_icon.svg
+│   │   ├── people.svg
+│   │   ├── publish.svg
+│   │   ├── react.svg
+│   │   ├── regen.svg
+│   │   ├── repeat-icon.svg
+│   │   ├── save-icon.svg
+│   │   ├── share_icon.svg
+│   │   ├── shell.svg
+│   │   ├── upload_arr.svg
+│   │   └── user_icon.svg
+│   ├── auth
+│   │   └── authLoader.js
+│   ├── components
+│   │   ├── CampaignSection
+│   │   │   ├── CampaignSection.jsx
+│   │   │   └── CampaignSection.scss
+│   │   ├── ContentCard
+│   │   │   ├── ContentCard.jsx
+│   │   │   └── ContentCard.module.scss
+│   │   ├── CreativeOptions
+│   │   │   ├── CreativeOptions.jsx
+│   │   │   └── CreativeOptions.module.scss
+│   │   ├── CreativeToolbar
+│   │   │   ├── CreativeToolbar.jsx
+│   │   │   └── CreativeToolbar.scss
+│   │   ├── FilterSection
+│   │   │   ├── CreativeFilterSection.jsx
+│   │   │   ├── FilterSection.jsx
+│   │   │   ├── FilterSection.scss
+│   │   │   └── index.js
+│   │   ├── GenerateCopyButton
+│   │   │   ├── GenerateCopyButton.jsx
+│   │   │   └── GenerateCopyButton.module.scss
+│   │   ├── ImageGrid
+│   │   │   ├── ImageGrid.jsx
+│   │   │   └── ImageGrid.scss
+│   │   ├── MetricCards
+│   │   │   ├── MetricCards.jsx
+│   │   │   └── MetricCards.scss
+│   │   ├── NewCampaignButton
+│   │   │   ├── NewCampaignButton.jsx
+│   │   │   └── NewCampaignButton.scss
+│   │   ├── Preview
+│   │   │   ├── Preview.jsx
+│   │   │   └── Preview.scss
+│   │   ├── PromptComposer
+│   │   │   ├── PromptComposer.jsx
+│   │   │   └── PromptComposer.scss
+│   │   ├── Stepper
+│   │   │   ├── Stepper.jsx
+│   │   │   └── Stepper.scss
+│   │   └── TextBar
+│   │       ├── TextBar.jsx
+│   │       └── TextBar.module.scss
+│   ├── index.css
+│   ├── layout
+│   │   ├── .DS_Store
+│   │   ├── DashboardLayout
+│   │   │   ├── DashboardLayout.jsx
+│   │   │   └── DashboardLayout.scss
+│   │   ├── Footer
+│   │   │   ├── .DS_Store
+│   │   │   ├── Footer.jsx
+│   │   │   ├── Footer.scss
+│   │   │   └── index.js
+│   │   ├── Header
+│   │   │   ├── Header.jsx
+│   │   │   ├── Header.scss
+│   │   │   └── index.js
+│   │   ├── SideNav
+│   │   │   ├── SideNav.jsx
+│   │   │   └── SideNav.scss
+│   │   └── SidePanel
+│   │       ├── SidePanel.jsx
+│   │       ├── SidePanel.scss
+│   │       └── index.js
+│   ├── main.jsx
+│   ├── pages
+│   │   ├── About
+│   │   │   └── AboutPage.jsx
+│   │   ├── Creative
+│   │   │   ├── Creative.jsx
+│   │   │   └── Creative.scss
+│   │   ├── CreativeStudio
+│   │   │   ├── CreativeStudio.jsx
+│   │   │   └── CreativeStudio.scss
+│   │   ├── Error
+│   │   │   └── ErrorPage.jsx
+│   │   ├── Home
+│   │   │   └── HomePage.jsx
+│   │   ├── Login
+│   │   │   ├── Login.jsx
+│   │   │   └── Login.scss
+│   │   └── StudioPage
+│   │       ├── StudioPage.jsx
+│   │       └── StudioPage.scss
+│   └── router
+│       └── router.jsx
+├── structure.txt
+└── vite.config.js
